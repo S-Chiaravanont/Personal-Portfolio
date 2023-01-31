@@ -1,0 +1,142 @@
+.welcome-overlay {
+  text-align: center;
+  color: white;
+  background-color: black;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation-name: welcomefade;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  z-index: 5;
+}
+
+.home-background {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(45deg, red, blue, green, yellow);
+  background-size: 300% 300%;
+  animation-name: homebgradiant;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  padding: 20px;
+}
+
+ul {
+  display: flex;
+  justify-content: end;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+li {
+  display: inline-block;
+  padding: 10px 30px;
+}
+
+ul > li > a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+}
+
+li:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border-radius: 1px solid rgba(255, 255, 255, 1);
+}
+
+.intro-card {
+  color: white;
+  margin-left: 10%;
+  margin-top: 20%;
+}
+
+.chevron-down {
+  font-size: 40px;
+  animation: chevrondown 2s infinite;
+  margin: 0;
+}
+
+.chevron-down-second {
+  font-size: 40px;
+  animation: chevrondowntwo 2s infinite;
+  margin: 0;
+}
+
+.home-technology {
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+div.home-technology > a > img {
+  height: 128px;
+}
+
+@keyframes homebgradiant {
+  0% {
+    background-position: 0 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@keyframes welcomefade {
+  0% {
+    opacity: 1;
+  }
+
+  33% {
+    opacity: 1;
+  }
+
+  90% {
+    top: 0;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+    z-index: 0;
+    top: -100%;
+  }
+}
+
+@keyframes chevrondown {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+}
+
+@keyframes chevrondowntwo {
+  0% {
+    transform: translateY(-15px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

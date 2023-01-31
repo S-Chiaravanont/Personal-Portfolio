@@ -1,3 +1,3 @@
-# final-project
+# Personal Portfolio
 
-A full stack JavaScript solo project.
+Personal Portfolio Showcase using React, Node.js, Express.js and PostgreSQL.
