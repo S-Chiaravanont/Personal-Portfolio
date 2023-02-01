@@ -14,3 +14,28 @@
 .column-halves {
   flex-basis: 50%;
 }
+
+.column-thirds {
+  flex-basis: calc(100%/3);
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-no-wrap {
+  flex-wrap: nowrap;
+}
+
+@media only screen and (max-width: 480px) {
+  .column-halves,
+  .column-thirds {
+    flex-basis: 100%;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 800px) {
+  .column-thirds {
+    flex-basis: 50%;
+  }
+}

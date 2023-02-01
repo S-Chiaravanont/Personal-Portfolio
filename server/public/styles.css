@@ -1,5 +1,8 @@
-.welcome-overlay {
+.text-center {
   text-align: center;
+}
+
+.welcome-overlay {
   color: white;
   background-color: black;
   height: 100vh;
@@ -71,15 +74,70 @@ li:hover {
   margin: 0;
 }
 
-.home-technology {
-  text-align: center;
+.chevron-anchor {
+  text-decoration: none;
+  color: white;
+}
+
+.section-title {
   color: white;
   text-transform: uppercase;
   text-decoration: underline;
+  margin: 20px;
 }
 
-div.home-technology > a > img {
-  height: 128px;
+.logo-tech {
+  height: 300px;
+}
+
+.logo-tech:hover {
+  border: 1px dashed white;
+  animation: borderblinking 2s infinite;
+  animation-direction: alternate;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+img {
+  margin: auto;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.back-to-top {
+  text-decoration: none;
+  color: white;
+}
+
+.back-to-top:hover {
+  color: aqua;
+}
+
+.project-bg {
+  width: 100%;
+  background-color: white;
+}
+
+@keyframes borderblinking {
+  0% {
+    border-color: rgba(255, 255, 255, 1);
+  }
+
+  25% {
+    border-color: rgba(255, 255, 255, 0.75);
+  }
+
+  50% {
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  75% {
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+
+  100% {
+    border-color: rgba(255, 255, 255, 0);
+  }
 }
 
 @keyframes homebgradiant {
@@ -112,7 +170,7 @@ div.home-technology > a > img {
   100% {
     opacity: 0;
     display: none;
-    z-index: 0;
+    z-index: -5;
     top: -100%;
   }
 }
