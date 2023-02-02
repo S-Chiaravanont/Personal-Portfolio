@@ -23,45 +23,93 @@ export default function Home(props) {
       </div>
       <div className='container'>
         <div className='row flex-wrap'>
-          <div id='technology' className='section-title column-full text-center'>
-            <h2>Technology</h2>
+          <div id='technology' className='column-full text-center'>
+            <h2 className='section-title'>Technology</h2>
           </div>
-          <div className='column-thirds logo-tech text-center'>
-            <a target="_blank" title="W3C, CC BY 3.0 &lt;https://creativecommons.org/licenses/by/3.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:HTML5_logo_and_wordmark.svg" rel="noreferrer"><img id='html-logo' width="256" alt="HTML5 logo and wordmark" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/256px-HTML5_logo_and_wordmark.svg.png" /></a>
-          </div>
-          <div className='column-thirds logo-tech text-center'>
-            <a title="Rudloff, CC BY 3.0 &lt;https://creativecommons.org/licenses/by/3.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:CSS3_logo_and_wordmark.svg" target='_blank' rel="noreferrer"><img id='css-logo' width="200" alt="CSS3 logo and wordmark" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/256px-CSS3_logo_and_wordmark.svg.png" /></a>
-          </div>
-
-          <div className='column-thirds logo-tech text-center'>
-            <a title="Nikotaf, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Javascript_badge.svg" target='_blank' rel="noreferrer"><img width="256" alt="Javascript badge" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Javascript_badge.svg/256px-Javascript_badge.svg.png" /></a>
-          </div>
-
-          <div className='column-thirds logo-tech text-center'>
-            <a title="Facebook, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:React-icon.svg" target='_blank' rel="noreferrer"><img width="256" alt="React-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/256px-React-icon.svg.png" /></a>
-          </div>
-
-          <div className='column-thirds logo-tech text-center'>
-            <a title="node.js authors, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Node.js_logo.svg" target='_blank' rel="noreferrer"><img width="256" alt="Node.js logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/256px-Node.js_logo.svg.png" /></a>
-          </div>
-
-          <div className='column-thirds logo-tech text-center'>
-            <a title="expressjs developers, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Expressjs.png" target='_blank' rel="noreferrer"><img width="256" alt="Expressjs" src="https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" /></a>
-          </div>
-
-          <div className='column-thirds logo-tech text-center'>
-            <a title="Daniel Lundin, PostgreSQL License &lt;https://www.postgresql.org/about/licence/&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Postgresql_elephant.svg" target='_blank' rel="noreferrer"><img width="256" alt="Postgresql elephant" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/256px-Postgresql_elephant.svg.png" /></a>
-          </div>
-          <div className='column-full text-center'>
-            <h4><a href='#home' className='back-to-top'>^ TOP ^</a></h4>
+        </div>
+        <div className='row'>
+          <div className='column-full dis-grid'>
+            <div className='cards'>
+              <div className='card text-center'>
+                <img id='html-logo' width="256" alt="HTML5 logo and wordmark" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/256px-HTML5_logo_and_wordmark.svg.png" />
+              </div>
+              <div className='card text-center'>
+                <img id='css-logo' width="200" alt="CSS3 logo and wordmark" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/256px-CSS3_logo_and_wordmark.svg.png" />
+              </div>
+              <div className='card text-center'>
+                <img width="256" alt="Javascript badge" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Javascript_badge.svg/256px-Javascript_badge.svg.png" />
+              </div>
+              <div className='card text-center'>
+                <img width="256" alt="React-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/256px-React-icon.svg.png" />
+              </div>
+              <div className='card text-center'>
+                <img width="256" alt="Node.js logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/256px-Node.js_logo.svg.png" />
+              </div>
+              <div className='card text-center'>
+                <img width="256" alt="Expressjs" src="https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" />
+              </div>
+              <div className='card text-center'>
+                <img width="256" alt="Postgresql elephant" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/256px-Postgresql_elephant.svg.png" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <div className='project-bg'>
         <div className='container'>
-          <div className='row'>
-            <div className='column-full section-title text-center'>
-              <h2 id='projects'>Project</h2>
+          <div className='row flex-wrap'>
+            <div className='column-full text-center'>
+              <h2 id='projects' className='section-title'>Projects</h2>
+            </div>
+            <div className='column-halves'>
+              <div className='project-card'>
+                <h2 id='projects'>PICK-UP (SPORT)</h2>
+                <p>A full stack web application for anyone looking for pick-up sports in their community.</p>
+                Techonology & API
+                <ul>
+                  <li>HTML5/CSS3</li>
+                  <li>JavaScript</li>
+                  <li>React</li>
+                  <li>Material UI</li>
+                  <li>Node.js</li>
+                  <li>Express.js</li>
+                  <li>PostgreSQL</li>
+                  <li>Google Maps, Autocomplete, Geocoding</li>
+                </ul>
+                <p>Check out: <a href='http://pick-up-sports.siriphumchiaravanont.com' target='_blank' rel="noreferrer">LIVE DEMO</a> <br />
+                </p>
+                <p>Check out: <a href='https://github.com/S-Chiaravanont/pick-up-sports' target='_blank' rel="noreferrer">Github repos</a>
+                </p>
+              </div>
+            </div>
+            <div className='column-halves'>
+              <div className='project-card'>
+                <h4>Video DEMO of the application</h4>
+                <iframe width="100%" height="220wh" src="https://www.youtube.com/embed/MKU1cMlWuC4" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+              </div>
+            </div>
+            <div className='column-halves'>
+              <div className='project-card'>
+                <h2 id='projects'>CO2 Emission</h2>
+                <p>A full stack web application for anyone looking track thier carbon footprints on the daily basis.</p>
+                Techonology & API
+                <ul>
+                  <li>HTML5/CSS3</li>
+                  <li>JavaScript</li>
+                  <li>Chart.css</li>
+                  <li>Climatiq API</li>
+                </ul>
+                <p>Check out: <a href='https://s-chiaravanont.github.io/Carbon-footprint-tracker/' target='_blank' rel="noreferrer">LIVE DEMO</a> <br />
+                </p>
+                <p>Check out: <a href='https://github.com/S-Chiaravanont/Carbon-footprint-tracker' target='_blank' rel="noreferrer">Github repos</a>
+                </p>
+              </div>
+            </div>
+            <div className='column-halves'>
+              <div className='project-card'>
+                <h4>Video DEMO of the application</h4>
+                <iframe width="100%" height="215wh" src="https://www.youtube.com/embed/-X3L_QiC4uY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
+              </div>
             </div>
           </div>
         </div>

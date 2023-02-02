@@ -1,6 +1,7 @@
 .container {
-  max-width: 960px;
+  max-width: 1080px;
   margin: auto;
+  padding: 15px;
 }
 
 .row {
@@ -19,12 +20,21 @@
   flex-basis: calc(100%/3);
 }
 
+.column-two-thirds {
+  flex-basis: calc(100%/3) * 2;
+}
+
 .flex-wrap {
   flex-wrap: wrap;
 }
 
 .flex-no-wrap {
   flex-wrap: nowrap;
+}
+
+.dis-grid {
+  display: grid;
+  margin-bottom: 60px;
 }
 
 @media only screen and (max-width: 480px) {
