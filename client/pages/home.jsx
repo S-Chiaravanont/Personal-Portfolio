@@ -114,6 +114,13 @@ export default function Home(props) {
           </div>
         </div>
       </div>
+
+      <div id='contact' className='contact text-center'>
+        <h3 className='section-title'>Contact</h3>
+        <p>Email: Cchiaravanont@gmail.com</p>
+        <p>Github: <a target='_blank' href="https://github.com/S-Chiaravanont" rel="noreferrer">Link</a></p>
+        <p>LinkedIn: <a target='_blank' rel="noreferrer" href='https://www.linkedin.com/in/siriphumchiaravanont/'>Link</a></p>
+      </div>
     </>
   );
 }
