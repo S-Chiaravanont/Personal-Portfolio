@@ -10,11 +10,12 @@
   width: 150px;
   height: 80px;
   background-color: gray;
-  position: absolute;
+  border-radius: 30px;
+
+  /* position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 30px;
+  transform: translate(-50%, -50%); */
 }
 
 .pg-moving-text {

@@ -20,7 +20,28 @@ export default function Playground(props) {
   }
 
   const startDragging = ({ clientX, clientY }) => {
-    elemRef.current.style.transform = `translate(${clientX - dragProps.current.dragStartX + dragProps.current.dragStartLeft - contRef.current.getBoundingClientRect().left}px,
+    const { left } = elemRef.current.getBoundingClientRect();
+    const boundary = {
+      left: contRef.current.getBoundingClientRect().left,
+      right: contRef.current.getBoundingClientRect().right - 150,
+      top: contRef.current.getBoundingClientRect().top,
+      bottom: contRef.current.getBoundingClientRect().bottom - 80
+    };
+    let xTranslate;
+    const xMovement = clientX - dragProps.current.dragStartX + dragProps.current.dragStartLeft - contRef.current.getBoundingClientRect().left;
+    // console.log('xMovement', xMovement);
+    // console.log('elemRef.left', left);
+    // console.log('boundary.left', boundary.left);
+    // console.log('boundary.right', boundary.right);
+    if (left + xMovement < boundary.left) {
+      xTranslate = left - boundary.left;
+    } else if (xMovement > boundary.right) {
+      xTranslate = boundary.right - left;
+    } else {
+      xTranslate = xMovement;
+    }
+
+    elemRef.current.style.transform = `translate(${xTranslate}px,
      ${dragProps.current.dragStartTop + clientY - dragProps.current.dragStartY - contRef.current.getBoundingClientRect().top}px)`;
   };
 
