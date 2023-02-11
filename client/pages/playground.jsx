@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 export default function Playground(props) {
   const elemRef = useRef(null);
   const dragProps = useRef();
+  const contRef = useRef(null);
 
   function initialiseDrag(event) {
     const { target, clientX, clientY } = event;
@@ -14,13 +15,13 @@ export default function Playground(props) {
       dragStartX: clientX,
       dragStartY: clientY
     };
-
     window.addEventListener('mousemove', startDragging, false);
     window.addEventListener('mouseup', stopDragging, false);
   }
 
   const startDragging = ({ clientX, clientY }) => {
-    elemRef.current.style.transform = `translate(${dragProps.current.dragStartLeft + clientX - dragProps.current.dragStartX - 132.5}px, ${dragProps.current.dragStartTop + clientY - dragProps.current.dragStartY - 95}px)`;
+    elemRef.current.style.transform = `translate(${clientX - dragProps.current.dragStartX + dragProps.current.dragStartLeft - contRef.current.getBoundingClientRect().left}px,
+     ${dragProps.current.dragStartTop + clientY - dragProps.current.dragStartY - contRef.current.getBoundingClientRect().top}px)`;
   };
 
   const stopDragging = () => {
@@ -35,9 +36,9 @@ export default function Playground(props) {
           <h1 style={{ color: 'white' }}>Movable DIV</h1>
         </div>
         <div className='column-full'>
-          <div className='pg-moving-div-container'>
+          <div className='pg-moving-div-container' ref={contRef}>
             <div className='pg-moving-div-box text-center' onMouseDown={initialiseDrag} ref={elemRef} >
-              <h5 className='pg-moving-text'>click here</h5>
+              {/* <h5 className='pg-moving-text'>click here</h5> */}
             </div>
           </div>
         </div>
