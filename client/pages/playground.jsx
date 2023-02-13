@@ -20,29 +20,34 @@ export default function Playground(props) {
   }
 
   const startDragging = ({ clientX, clientY }) => {
-    const { left } = elemRef.current.getBoundingClientRect();
+    const { left, top } = elemRef.current.getBoundingClientRect();
     const boundary = {
       left: contRef.current.getBoundingClientRect().left,
-      right: contRef.current.getBoundingClientRect().right - 150,
+      right: contRef.current.getBoundingClientRect().right - contRef.current.getBoundingClientRect().left - 150,
       top: contRef.current.getBoundingClientRect().top,
-      bottom: contRef.current.getBoundingClientRect().bottom - 80
+      bottom: contRef.current.getBoundingClientRect().bottom - contRef.current.getBoundingClientRect().top - 80
     };
     let xTranslate;
     const xMovement = clientX - dragProps.current.dragStartX + dragProps.current.dragStartLeft - contRef.current.getBoundingClientRect().left;
-    // console.log('xMovement', xMovement);
-    // console.log('elemRef.left', left);
-    // console.log('boundary.left', boundary.left);
-    // console.log('boundary.right', boundary.right);
+    let yTranslate;
+    const yMovement = dragProps.current.dragStartTop + clientY - dragProps.current.dragStartY - contRef.current.getBoundingClientRect().top;
     if (left + xMovement < boundary.left) {
       xTranslate = left - boundary.left;
-    } else if (xMovement > boundary.right) {
-      xTranslate = boundary.right - left;
+    } else if (xMovement >= boundary.right) {
+      xTranslate = boundary.right;
     } else {
       xTranslate = xMovement;
     }
+    if (top + yMovement < boundary.top) {
+      yTranslate = top - boundary.top;
+    } else if (yMovement > boundary.bottom) {
+      yTranslate = boundary.bottom;
+    } else {
+      yTranslate = yMovement;
+    }
 
     elemRef.current.style.transform = `translate(${xTranslate}px,
-     ${dragProps.current.dragStartTop + clientY - dragProps.current.dragStartY - contRef.current.getBoundingClientRect().top}px)`;
+     ${yTranslate}px)`;
   };
 
   const stopDragging = () => {
